@@ -57,6 +57,9 @@ sockjs_game.on('connection', function(conn) {
       delete connections[id];
       id = userName;
       connections[id] = conn;
+      if (!users[userName]) {
+        users[userName] = {userName: userName, games: {}, won: 0, lost: 0};
+      }
       break;
     case "user:list":
       conn.sendjson("user:list", users)
@@ -115,7 +118,7 @@ sockjs_game.on('connection', function(conn) {
         c.sendjson('game:turned', {game: game, cell: {Id: cell.Id, stone: cell.stone}});
       });
 
-      var hasWon = utils.isWinningTurn(game, boards[game.gameId] cell);
+      var hasWon = utils.isWinningTurn(game, boards[game.gameId], cell);
       if (hasWon) {
         console.log("WON", hasWon);
         game.status = "finished"

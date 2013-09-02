@@ -1,3 +1,6 @@
+if (typeof require !== 'undefined')
+  var _ = require("./underscore-min.js");
+
 var Gomockery = Gomockery || {};
 
 var S4 = function () {
@@ -13,7 +16,7 @@ Gomockery.Utils = {
     else {
       return S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4();
     }
-  }
+  },
 
   isWinningTurn: function (game, grid, cell) {
 
