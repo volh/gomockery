@@ -1,0 +1,21 @@
+
+* Finish Board - hexagons, functions/helpers
+
+* Initialize game for 1 player
+
+* Allow to put stones on every hexagon
+
+* Users - names, create/join game
+
+* Full game - 2 users, winning/losing, sockjs backend
+
+* Simple Leaderboard as a route
+
+* Navigation menu - new game, games, leaderboard
+
+* Unit tests
+
+* Simple chat? optional
+
+* primitive AI? optional
+
